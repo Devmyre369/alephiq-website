@@ -1,5 +1,4 @@
-
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +10,11 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#0c0a0e",
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
   title: {
@@ -48,8 +52,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+    <html lang="en" className="dark">
+      <body
+        className={`${inter.variable} bg-[#0c0a0e] text-[#f4f3f6] antialiased selection:bg-[#d3c2e7] selection:text-[#110e14]`}
+      >
         <Header />
         {children}
         <Footer />

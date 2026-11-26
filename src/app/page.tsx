@@ -1,29 +1,35 @@
+import Link from "next/link";
 
 const principles = [
   {
     number: "01",
     title: "Explore",
-    description: "Investigate existing technologies, emerging ideas and new possibilities.",
+    description:
+      "Investigate existing technologies, emerging ideas and new possibilities.",
   },
   {
     number: "02",
     title: "Understand",
-    description: "Study architectures, principles, research and underlying foundations.",
+    description:
+      "Study architectures, principles, research and underlying foundations.",
   },
   {
     number: "03",
     title: "Experiment",
-    description: "Test capabilities, reproduce results and identify limitations.",
+    description:
+      "Test capabilities, reproduce results and identify limitations.",
   },
   {
     number: "04",
     title: "Engineer",
-    description: "Build original systems, products, tools and practical solutions.",
+    description:
+      "Build original systems, products, tools and practical solutions.",
   },
   {
     number: "05",
     title: "Share",
-    description: "Document and publish our research, experiments and engineering journey.",
+    description:
+      "Document and publish our research, experiments and engineering journey.",
   },
 ];
 
@@ -65,9 +71,7 @@ export default function Home() {
     <main>
       {/* Hero */}
       <section className="hero container">
-        <p className="eyebrow">
-          INDEPENDENT DEEP-TECH RESEARCH & DEVELOPMENT
-        </p>
+        <p className="eyebrow">INDEPENDENT DEEP-TECH RESEARCH &amp; DEVELOPMENT</p>
 
         <h1>
           Exploring technology.
@@ -85,9 +89,9 @@ export default function Home() {
         </p>
 
         <div className="hero-actions">
-          <a href="#research" className="button-primary">
-            Explore our work <span>↗</span>
-          </a>
+          <Link href="/research" className="button-primary">
+            Explore our work <span aria-hidden="true">&#8599;</span>
+          </Link>
 
           <a href="#about" className="button-secondary">
             Discover AlephIQ
@@ -115,8 +119,8 @@ export default function Home() {
             Technology should not simply be used. It should be explored,
             questioned, understood and extended. Our approach combines
             independent research, hands-on experimentation and original
-            engineering to transform technological understanding into
-            practical solutions.
+            engineering to transform technological understanding into practical
+            solutions.
           </p>
 
           <div className="principles">
@@ -132,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* Research Domains */}
-      <section id="domains" className="domains section-padding">
+      <section id="research" className="domains section-padding">
         <div className="container">
           <p className="eyebrow">AREAS OF EXPLORATION</p>
 
@@ -145,14 +149,18 @@ export default function Home() {
 
           <div className="domain-grid">
             {researchDomains.map((domain) => (
-              <article className="domain-card" key={domain.number}>
+              <Link
+                href="/technologies"
+                className="domain-card block"
+                key={domain.number}
+              >
                 <span>{domain.number}</span>
                 <h3>{domain.title}</h3>
                 <p>{domain.description}</p>
                 <div className="card-arrow" aria-hidden="true">
-                  ↗
+                  &#8599;
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -166,10 +174,10 @@ export default function Home() {
           <h2>Understanding is only the beginning.</h2>
 
           <p className="section-description">
-            Research becomes meaningful when knowledge can be applied.
-            We aim to transform technical understanding into engineering
-            output: prototypes, software, tools and products designed to
-            address specific real-world problems.
+            Research becomes meaningful when knowledge can be applied. We aim to
+            transform technical understanding into engineering output:
+            prototypes, software, tools and products designed to address
+            specific real-world problems.
           </p>
         </div>
       </section>
@@ -177,24 +185,24 @@ export default function Home() {
       {/* Publications */}
       <section id="publications" className="publications section-padding">
         <div className="container">
-          <p className="eyebrow">KNOWLEDGE & OPEN EXPLORATION</p>
+          <p className="eyebrow">KNOWLEDGE &amp; OPEN EXPLORATION</p>
 
           <h2>Research documented. Knowledge shared.</h2>
 
           <p className="section-description">
             We document our research, technical explorations, experiments,
             benchmarks and engineering work. Publications and open-source
-            contributions make our process transparent and allow others
-            to learn from and build upon our work.
+            contributions make our process transparent and allow others to learn
+            from and build upon our work.
           </p>
 
           <a
-            href="https://github.com"
+            href="https://github.com/Devmyre369"
             target="_blank"
             rel="noopener noreferrer"
-            className="button-secondary"
+            className="button-secondary mt-7"
           >
-            Explore GitHub ↗
+            Explore GitHub <span aria-hidden="true">&#8599;</span>
           </a>
         </div>
       </section>
